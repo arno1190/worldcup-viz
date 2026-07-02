@@ -142,7 +142,7 @@ export default function RadialBracket({ bracket }: Props) {
     >
       <svg
         viewBox={`0 0 ${layout.size} ${layout.size}`}
-        className="mx-auto block h-auto w-full max-w-[min(94vw,72vh)]"
+        className="mx-auto block h-auto w-full max-w-[min(92vw,66vh)] lg:max-w-[min(58vw,82vh)]"
         role="group"
         aria-label={`${bracket.title}. Interactive radial knockout bracket — focus a nation to trace its road to the final.`}
         onClick={() => setPinnedTeam(null)}
