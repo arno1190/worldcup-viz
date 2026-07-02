@@ -55,6 +55,18 @@ export default function Home() {
 
         <footer className="mt-5 max-w-2xl text-center text-[11px] leading-relaxed text-slate-600">
           <p>
+            Original bracket concept by{" "}
+            <a
+              href="https://www.facebook.com/EmilioSansolini"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-slate-400 underline decoration-slate-600 underline-offset-2 hover:text-white"
+            >
+              Emilio Sansolini
+            </a>
+            .
+          </p>
+          <p className="mt-1">
             Live data compiled from public sources (Wikipedia, ESPN, CBS Sports,
             Sky Sports) and refreshed automatically every night. Flags by{" "}
             <a

@@ -116,6 +116,7 @@ export function canonicalize(raw, rawTeams, flags, meta) {
       penB: nn(m.penB),
       winner: m.winner ?? null,
       date: m.date ?? null,
+      kickoffUtc: m.kickoffUtc ?? null,
       venue: cleanText(m.venue),
       city: cleanText(m.city),
       status: m.status || "TBD",

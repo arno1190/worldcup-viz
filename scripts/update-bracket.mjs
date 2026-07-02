@@ -16,6 +16,107 @@ const root = join(__dirname, "..");
 const WIKI_PAGE = "2026_FIFA_World_Cup_knockout_stage";
 const WIKI_API = `https://en.wikipedia.org/w/api.php?action=parse&page=${WIKI_PAGE}&prop=wikitext&format=json&formatversion=2`;
 
+// Per-round pages carry each match's kickoff time + timezone in a Football box.
+const ROUND_PAGES = [
+  "2026 FIFA World Cup round of 32",
+  "2026 FIFA World Cup round of 16",
+  "2026 FIFA World Cup quarter-finals",
+  "2026 FIFA World Cup semi-finals",
+  "2026 FIFA World Cup final",
+];
+
+const MONTHS = {
+  January: 1,
+  February: 2,
+  March: 3,
+  April: 4,
+  May: 5,
+  June: 6,
+  July: 7,
+  August: 8,
+  September: 9,
+  October: 10,
+  November: 11,
+  December: 12,
+};
+
+const UA = { "User-Agent": "worldcup-viz/1.0 (open-source data viz)" };
+const pad2 = (n) => String(Number(n)).padStart(2, "0");
+const normCity = (s) =>
+  String(s || "")
+    .toLowerCase()
+    .replace(/[^a-z]/g, "");
+
+async function fetchWikitext(page) {
+  const url = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(page)}&prop=wikitext&format=json&formatversion=2`;
+  const r = await fetch(url, { headers: UA });
+  if (!r.ok) return null;
+  const j = await r.json();
+  return j?.parse?.wikitext ?? null;
+}
+
+/** Display text of the last [[wikilink]] in a field (used for the host city). */
+function lastLinkText(field) {
+  const links = String(field).match(/\[\[[^\]]*\]\]/g);
+  if (!links || !links.length) return String(field).trim();
+  const last = links[links.length - 1].slice(2, -2);
+  return (last.includes("|") ? last.split("|").pop() : last).trim();
+}
+
+/** "12:00&nbsp;p.m. [[UTC−07:00|UTC−7]]" + date -> ISO UTC instant, or null. */
+function timeToUtc(date, rawTime) {
+  const s = String(rawTime).replace(/&nbsp;|&#160;/g, " ").trim();
+  const tm = s.match(/(\d{1,2}):(\d{2})\s*(a\.?m\.?|p\.?m\.?)?/i);
+  // Sign may be an ASCII hyphen, Unicode minus (−, U+2212) or en dash (–).
+  const om = s.match(/UTC\s*([+−–-])\s*(\d{1,2})(?::?(\d{2}))?/i);
+  if (!tm || !om) return null;
+  let hh = Number(tm[1]);
+  const mm = Number(tm[2]);
+  const mer = (tm[3] || "").toLowerCase().replace(/\./g, "");
+  if (mer === "pm" && hh < 12) hh += 12;
+  if (mer === "am" && hh === 12) hh = 0;
+  const sign = om[1] === "+" ? 1 : -1;
+  const offsetMin = sign * (Number(om[2]) * 60 + Number(om[3] || 0));
+  const [Y, M, D] = date.split("-").map(Number);
+  const ms = Date.UTC(Y, M - 1, D, hh, mm) - offsetMin * 60000;
+  return new Date(ms).toISOString().replace(/\.000Z$/, "Z");
+}
+
+/** Parse all Football boxes on a round page -> [{date, city, kickoffUtc}]. */
+function parseKickoffsFromPage(wt) {
+  const out = [];
+  const boxes = wt.split(/\{\{#invoke:Football box\|main/i).slice(1);
+  for (const raw of boxes) {
+    const seg = raw.slice(0, 1600);
+    const dm = seg.match(/\|\s*date=\{\{Start date\|(\d{4})\|(\d{1,2})\|(\d{1,2})/);
+    if (!dm) continue;
+    const date = `${dm[1]}-${pad2(dm[2])}-${pad2(dm[3])}`;
+    const tm = seg.match(/\|\s*time=([^\n|]+)/);
+    const sm = seg.match(/\|\s*stadium=([^\n]+)/);
+    const city = sm ? lastLinkText(sm[1]) : null;
+    const kickoffUtc = tm ? timeToUtc(date, tm[1]) : null;
+    if (city && kickoffUtc) out.push({ date, city, kickoffUtc });
+  }
+  return out;
+}
+
+/** Fetch every round page and index kickoff instants by `${date}|${city}`. */
+async function fetchKickoffs() {
+  const lookup = new Map();
+  try {
+    const pages = await Promise.all(ROUND_PAGES.map((p) => fetchWikitext(p).catch(() => null)));
+    for (const wt of pages) {
+      if (!wt) continue;
+      for (const k of parseKickoffsFromPage(wt)) {
+        lookup.set(`${k.date}|${normCity(k.city)}`, k.kickoffUtc);
+      }
+    }
+  } catch {
+    // times are best-effort; a failure here must not break the bracket refresh
+  }
+  return lookup;
+}
+
 const ROUND_MARKERS = [
   ["Round of 32", "R32", 16],
   ["Round of 16", "R16", 8],
@@ -142,6 +243,8 @@ async function main() {
   const block = extractBracketBlock(wt);
   if (!block) die("could not locate Bracket section");
 
+  const kickoffLookup = await fetchKickoffs();
+
   const year = 2026;
   const lines = block.split("\n");
 
@@ -232,6 +335,7 @@ async function main() {
       penB: sb.pens ?? null,
       winner,
       date,
+      kickoffUtc: (date && city && kickoffLookup.get(`${date}|${normCity(city)}`)) || null,
       venue: (city && venuesByCity[city]) || null,
       city,
       status,
@@ -259,6 +363,15 @@ async function main() {
     { teams: teamsCfg.map((t) => ({ name: t.name, circleFlagsSlug: t.slug, primaryColor: t.color })) },
     { title: prev.title, sources: raw.sources },
   );
+
+  // Keep a previously-known kickoff time if this run couldn't parse one (the
+  // round-page fetch is best-effort). Canonical ids are stable across runs.
+  const prevById = new Map(prev.matches.map((m) => [m.id, m]));
+  for (const m of next.matches) {
+    if (!m.kickoffUtc && prevById.get(m.id)?.kickoffUtc) {
+      m.kickoffUtc = prevById.get(m.id).kickoffUtc;
+    }
+  }
 
   const prevCompleted = prev.matches.filter((m) => m.status === "completed").length;
   const nextCompleted = next.matches.filter((m) => m.status === "completed").length;

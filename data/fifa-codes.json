@@ -1,0 +1,190 @@
+{
+  "GER": {
+    "name": "Germany",
+    "iso2": "de"
+  },
+  "PAR": {
+    "name": "Paraguay",
+    "iso2": "py"
+  },
+  "FRA": {
+    "name": "France",
+    "iso2": "fr"
+  },
+  "SWE": {
+    "name": "Sweden",
+    "iso2": "se"
+  },
+  "RSA": {
+    "name": "South Africa",
+    "iso2": "za"
+  },
+  "CAN": {
+    "name": "Canada",
+    "iso2": "ca"
+  },
+  "NED": {
+    "name": "Netherlands",
+    "iso2": "nl"
+  },
+  "MAR": {
+    "name": "Morocco",
+    "iso2": "ma"
+  },
+  "POR": {
+    "name": "Portugal",
+    "iso2": "pt"
+  },
+  "CRO": {
+    "name": "Croatia",
+    "iso2": "hr"
+  },
+  "ESP": {
+    "name": "Spain",
+    "iso2": "es"
+  },
+  "AUT": {
+    "name": "Austria",
+    "iso2": "at"
+  },
+  "USA": {
+    "name": "United States",
+    "iso2": "us"
+  },
+  "BIH": {
+    "name": "Bosnia and Herzegovina",
+    "iso2": "ba"
+  },
+  "BEL": {
+    "name": "Belgium",
+    "iso2": "be"
+  },
+  "SEN": {
+    "name": "Senegal",
+    "iso2": "sn"
+  },
+  "BRA": {
+    "name": "Brazil",
+    "iso2": "br"
+  },
+  "JPN": {
+    "name": "Japan",
+    "iso2": "jp"
+  },
+  "CIV": {
+    "name": "Ivory Coast",
+    "iso2": "ci"
+  },
+  "NOR": {
+    "name": "Norway",
+    "iso2": "no"
+  },
+  "MEX": {
+    "name": "Mexico",
+    "iso2": "mx"
+  },
+  "ECU": {
+    "name": "Ecuador",
+    "iso2": "ec"
+  },
+  "ENG": {
+    "name": "England",
+    "iso2": "gb-eng"
+  },
+  "COD": {
+    "name": "DR Congo",
+    "iso2": "cd"
+  },
+  "ARG": {
+    "name": "Argentina",
+    "iso2": "ar"
+  },
+  "CPV": {
+    "name": "Cabo Verde",
+    "iso2": "cv"
+  },
+  "AUS": {
+    "name": "Australia",
+    "iso2": "au"
+  },
+  "EGY": {
+    "name": "Egypt",
+    "iso2": "eg"
+  },
+  "SUI": {
+    "name": "Switzerland",
+    "iso2": "ch"
+  },
+  "ALG": {
+    "name": "Algeria",
+    "iso2": "dz"
+  },
+  "COL": {
+    "name": "Colombia",
+    "iso2": "co"
+  },
+  "GHA": {
+    "name": "Ghana",
+    "iso2": "gh"
+  },
+  "CUW": {
+    "name": "Curaçao",
+    "iso2": "cw"
+  },
+  "CZE": {
+    "name": "Czechia",
+    "iso2": "cz"
+  },
+  "HAI": {
+    "name": "Haiti",
+    "iso2": "ht"
+  },
+  "IRN": {
+    "name": "Iran",
+    "iso2": "ir"
+  },
+  "IRQ": {
+    "name": "Iraq",
+    "iso2": "iq"
+  },
+  "JOR": {
+    "name": "Jordan",
+    "iso2": "jo"
+  },
+  "NZL": {
+    "name": "New Zealand",
+    "iso2": "nz"
+  },
+  "QAT": {
+    "name": "Qatar",
+    "iso2": "qa"
+  },
+  "KSA": {
+    "name": "Saudi Arabia",
+    "iso2": "sa"
+  },
+  "SCO": {
+    "name": "Scotland",
+    "iso2": "gb-sct"
+  },
+  "KOR": {
+    "name": "South Korea",
+    "iso2": "kr"
+  },
+  "TUN": {
+    "name": "Tunisia",
+    "iso2": "tn"
+  },
+  "TUR": {
+    "name": "Türkiye",
+    "iso2": "tr"
+  },
+  "URU": {
+    "name": "Uruguay",
+    "iso2": "uy"
+  },
+  "UZB": {
+    "name": "Uzbekistan",
+    "iso2": "uz"
+  }
+}

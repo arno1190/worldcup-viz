@@ -4,7 +4,7 @@ import { useMemo, useState, useCallback, useRef } from "react";
 import { motion } from "motion/react";
 import type { Bracket, Match } from "@/lib/types";
 import { buildLayout, teamRoute, type LayoutNode } from "@/lib/layout";
-import { glowColor, scoreline, formatDate } from "@/lib/bracket";
+import { glowColor, scoreline, formatDate, formatKickoff } from "@/lib/bracket";
 
 interface Props {
   bracket: Bracket;
@@ -410,6 +410,7 @@ function MatchTip({
   const a = teamByName.get(m.teamA);
   const b = teamByName.get(m.teamB);
   const sc = scoreline(m);
+  const kickoff = formatKickoff(m.kickoffUtc);
   const statusLabel =
     m.status === "completed"
       ? "Full time"
@@ -459,9 +460,17 @@ function MatchTip({
         pen={m.penB}
         winner={m.winner === m.teamB}
       />
-      {(sc || m.venue || m.date) && (
+      {(sc || m.venue || m.date || kickoff) && (
         <div className="mt-2 border-t border-white/10 pt-2 text-[11px] leading-relaxed text-slate-400">
-          {m.date && <div>{formatDate(m.date)}</div>}
+          {kickoff ? (
+            <div>
+              {kickoff.date} ·{" "}
+              <span className="text-slate-300">{kickoff.time}</span>{" "}
+              <span className="text-slate-500">your time</span>
+            </div>
+          ) : (
+            m.date && <div>{formatDate(m.date)}</div>
+          )}
           {m.venue && (
             <div>
               {m.venue}

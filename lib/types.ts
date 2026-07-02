@@ -31,6 +31,8 @@ export interface Match {
   penB: number | null;
   winner: string | null;
   date: string | null;
+  /** Kickoff instant in UTC (ISO 8601, e.g. "2026-06-28T19:00:00Z"), or null. */
+  kickoffUtc: string | null;
   venue: string | null;
   city: string | null;
   status: MatchStatus;
