@@ -24,30 +24,40 @@ night** via a scheduled GitHub Action that reads Wikipedia's knockout bracket.
 | Interactive bracket component | `components/RadialBracket.tsx` |
 | Tournament snapshot (results + kickoff times) | `data/bracket.json` |
 | Player / team rankings | `data/stats.json` |
+| Zafronix API client + team resolver | `scripts/lib/zafronix.mjs` |
 | Canonical bracket normaliser (shared) | `scripts/lib/canonicalize.mjs` |
-| Nightly bracket scraper (results + kickoff times) | `scripts/update-bracket.mjs` |
-| Nightly stats scraper (scorers + attack) | `scripts/update-stats.mjs` |
+| Bracket refresh (results + kickoff times) | `scripts/update-bracket.mjs` |
+| Stats refresh (scorers, attack, defense) | `scripts/update-stats.mjs` |
 | Nightly cron | `.github/workflows/refresh-bracket.yml` |
 
-Kickoff times are parsed (with timezone) from Wikipedia's per-round match boxes
-and stored as a UTC instant per tie; the UI renders them in the **viewer's own
-timezone**. Player stats come from Wikipedia's structured `Module:Goalscorers`
-(goals only), so `topScorers` and `bestAttack` refresh nightly while `topAssists`
-and `bestDefense` are curated values preserved across refreshes.
+## Data source
 
-The bracket is a complete binary tree; the geometry is derived entirely from the
-canonical `R32-k / R16-k / QF-k / SF-k / F` id scheme, so the app stays dumb and
-the data pipeline owns correctness.
+All live data comes from the [Zafronix World Cup API](https://api.zafronix.com/docs)
+(`X-API-Key`, free tier 250 req/day — ~3 calls per refresh):
 
-### Refreshing the data locally
+- **Bracket** — `GET /bracket?year=2026` gives the knockout tree with `W<matchNo>`
+  refs (the real feeds-into linkage), results, clean team names and precomputed
+  `kickoffUtc`; `GET /matches` adds penalty-shootout scores. The refs are handed
+  to `canonicalize.mjs` which relabels to the app's canonical
+  `R32-k / R16-k / QF-k / SF-k / F` scheme. Kickoff times render in the **viewer's
+  own timezone**.
+- **Stats** — `GET /matches?year=2026` (one call) yields every match with
+  `goals[]`; `topScorers`, `bestAttack` and `bestDefense` are aggregated from it
+  (scorer names normalised so `K. Mbappe` / `Mbappé` merge). Assist data in the
+  feed is too sparse to rank, so `topAssists` is a curated list preserved across
+  refreshes.
+
+Each refresh **aborts without writing** on a bad/empty response, a missing key,
+or a failed structural check, so a bad run can never erase the last good data.
+ESPN's public API (`site.api.espn.com/.../soccer/fifa.world`) is a keyless
+fallback for the bracket if ever needed.
+
+### Refreshing locally
 
 ```bash
-pnpm refresh   # re-scrapes Wikipedia into data/bracket.json (defensive; no-ops if unchanged)
+export ZAFRONIX_KEY=zwc_...   # see .env.example
+pnpm refresh                  # bracket + stats (defensive; no-ops if unchanged)
 ```
-
-The scraper aborts without writing if the parse looks wrong (too few matches,
-team count changed, or completed ties regress), so a bad scrape can never erase
-the last good snapshot.
 
 ## Develop
 

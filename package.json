@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "refresh": "node scripts/update-bracket.mjs"
+    "refresh": "node scripts/update-bracket.mjs; node scripts/update-stats.mjs"
   },
   "dependencies": {
     "motion": "^12.42.2",

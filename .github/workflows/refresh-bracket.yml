@@ -1,9 +1,9 @@
 name: Refresh data
 
-# Pulls the latest 2026 World Cup knockout results and player/team stats from
-# Wikipedia every night and commits them. With Vercel's Git integration
-# connected, the commit triggers a production redeploy automatically — no
-# secrets required.
+# Pulls the latest 2026 World Cup bracket + player/team stats from the Zafronix
+# World Cup API every night and commits them. With Vercel's Git integration
+# connected, the commit triggers a production redeploy automatically.
+# Requires repo secret ZAFRONIX_KEY. Uses ~3 API calls/run (free tier: 250/day).
 
 on:
   schedule:
@@ -20,6 +20,8 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    env:
+      ZAFRONIX_KEY: ${{ secrets.ZAFRONIX_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -27,10 +29,10 @@ jobs:
         with:
           node-version: 22
 
-      - name: Update bracket (results + kickoff times) from Wikipedia
+      - name: Update bracket (results + kickoff times)
         run: node scripts/update-bracket.mjs || echo "bracket refresh aborted; keeping last good snapshot"
 
-      - name: Update player/team stats from Wikipedia
+      - name: Update player/team stats
         run: node scripts/update-stats.mjs || echo "stats refresh aborted; keeping last good stats"
 
       - name: Commit if changed

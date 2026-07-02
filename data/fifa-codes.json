@@ -186,5 +186,9 @@
   "UZB": {
     "name": "Uzbekistan",
     "iso2": "uz"
+  },
+  "PAN": {
+    "name": "Panama",
+    "iso2": "pa"
   }
 }

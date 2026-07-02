@@ -176,7 +176,7 @@
       "penB": 4,
       "winner": "Paraguay",
       "date": "2026-06-29",
-      "kickoffUtc": "2026-06-29T20:30:00Z",
+      "kickoffUtc": "2026-06-29T20:30:00.000Z",
       "venue": "Gillette Stadium",
       "city": "Foxborough",
       "status": "completed"
@@ -192,7 +192,7 @@
       "penB": null,
       "winner": "France",
       "date": "2026-06-30",
-      "kickoffUtc": "2026-06-30T21:00:00Z",
+      "kickoffUtc": "2026-06-30T21:00:00.000Z",
       "venue": "MetLife Stadium",
       "city": "East Rutherford",
       "status": "completed"
@@ -208,7 +208,7 @@
       "penB": null,
       "winner": "Canada",
       "date": "2026-06-28",
-      "kickoffUtc": "2026-06-28T19:00:00Z",
+      "kickoffUtc": "2026-06-28T19:00:00.000Z",
       "venue": "SoFi Stadium",
       "city": "Inglewood",
       "status": "completed"
@@ -223,8 +223,8 @@
       "penA": 2,
       "penB": 3,
       "winner": "Morocco",
-      "date": "2026-06-29",
-      "kickoffUtc": "2026-06-30T01:00:00Z",
+      "date": "2026-06-30",
+      "kickoffUtc": "2026-06-30T01:00:00.000Z",
       "venue": "Estadio BBVA",
       "city": "Guadalupe",
       "status": "completed"
@@ -240,7 +240,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-02",
-      "kickoffUtc": "2026-07-02T23:00:00Z",
+      "kickoffUtc": "2026-07-02T23:00:00.000Z",
       "venue": "BMO Field",
       "city": "Toronto",
       "status": "scheduled"
@@ -256,7 +256,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-02",
-      "kickoffUtc": "2026-07-02T19:00:00Z",
+      "kickoffUtc": "2026-07-02T19:00:00.000Z",
       "venue": "SoFi Stadium",
       "city": "Inglewood",
       "status": "scheduled"
@@ -271,8 +271,8 @@
       "penA": null,
       "penB": null,
       "winner": "United States",
-      "date": "2026-07-01",
-      "kickoffUtc": "2026-07-02T00:00:00Z",
+      "date": "2026-07-02",
+      "kickoffUtc": "2026-07-02T00:00:00.000Z",
       "venue": "Levi's Stadium",
       "city": "Santa Clara",
       "status": "completed"
@@ -288,7 +288,7 @@
       "penB": null,
       "winner": "Belgium",
       "date": "2026-07-01",
-      "kickoffUtc": "2026-07-01T20:00:00Z",
+      "kickoffUtc": "2026-07-01T20:00:00.000Z",
       "venue": "Lumen Field",
       "city": "Seattle",
       "status": "completed"
@@ -304,7 +304,7 @@
       "penB": null,
       "winner": "Brazil",
       "date": "2026-06-29",
-      "kickoffUtc": "2026-06-29T17:00:00Z",
+      "kickoffUtc": "2026-06-29T17:00:00.000Z",
       "venue": "NRG Stadium",
       "city": "Houston",
       "status": "completed"
@@ -320,7 +320,7 @@
       "penB": null,
       "winner": "Norway",
       "date": "2026-06-30",
-      "kickoffUtc": "2026-06-30T17:00:00Z",
+      "kickoffUtc": "2026-06-30T17:00:00.000Z",
       "venue": "AT&T Stadium",
       "city": "Arlington",
       "status": "completed"
@@ -335,10 +335,10 @@
       "penA": null,
       "penB": null,
       "winner": "Mexico",
-      "date": "2026-06-30",
-      "kickoffUtc": "2026-07-01T02:00:00Z",
-      "venue": "Estadio Azteca",
-      "city": "Mexico City",
+      "date": "2026-07-01",
+      "kickoffUtc": "2026-07-01T01:00:00.000Z",
+      "venue": "Mexico City Stadium",
+      "city": "Ciudad de México",
       "status": "completed"
     },
     {
@@ -352,7 +352,7 @@
       "penB": null,
       "winner": "England",
       "date": "2026-07-01",
-      "kickoffUtc": "2026-07-01T16:00:00Z",
+      "kickoffUtc": "2026-07-01T16:00:00.000Z",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
       "status": "completed"
@@ -368,7 +368,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-03",
-      "kickoffUtc": "2026-07-03T22:00:00Z",
+      "kickoffUtc": "2026-07-03T22:00:00.000Z",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens",
       "status": "scheduled"
@@ -384,7 +384,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-03",
-      "kickoffUtc": "2026-07-03T18:00:00Z",
+      "kickoffUtc": "2026-07-03T18:00:00.000Z",
       "venue": "AT&T Stadium",
       "city": "Arlington",
       "status": "scheduled"
@@ -399,8 +399,8 @@
       "penA": null,
       "penB": null,
       "winner": null,
-      "date": "2026-07-02",
-      "kickoffUtc": "2026-07-03T03:00:00Z",
+      "date": "2026-07-03",
+      "kickoffUtc": "2026-07-03T03:00:00.000Z",
       "venue": "BC Place",
       "city": "Vancouver",
       "status": "scheduled"
@@ -415,8 +415,8 @@
       "penA": null,
       "penB": null,
       "winner": null,
-      "date": "2026-07-03",
-      "kickoffUtc": "2026-07-04T01:30:00Z",
+      "date": "2026-07-04",
+      "kickoffUtc": "2026-07-04T01:30:00.000Z",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
       "status": "scheduled"
@@ -432,7 +432,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-04",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-04T21:00:00.000Z",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
       "status": "scheduled"
@@ -448,7 +448,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-04",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-04T17:00:00.000Z",
       "venue": "NRG Stadium",
       "city": "Houston",
       "status": "scheduled"
@@ -464,7 +464,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-06",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-06T19:00:00.000Z",
       "venue": "AT&T Stadium",
       "city": "Arlington",
       "status": "TBD"
@@ -479,8 +479,8 @@
       "penA": null,
       "penB": null,
       "winner": null,
-      "date": "2026-07-06",
-      "kickoffUtc": null,
+      "date": "2026-07-07",
+      "kickoffUtc": "2026-07-07T00:00:00.000Z",
       "venue": "Lumen Field",
       "city": "Seattle",
       "status": "scheduled"
@@ -496,7 +496,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-05",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-05T20:00:00.000Z",
       "venue": "MetLife Stadium",
       "city": "East Rutherford",
       "status": "scheduled"
@@ -511,10 +511,10 @@
       "penA": null,
       "penB": null,
       "winner": null,
-      "date": "2026-07-05",
-      "kickoffUtc": null,
-      "venue": "Estadio Azteca",
-      "city": "Mexico City",
+      "date": "2026-07-06",
+      "kickoffUtc": "2026-07-06T00:00:00.000Z",
+      "venue": "Mexico City Stadium",
+      "city": "Ciudad de México",
       "status": "scheduled"
     },
     {
@@ -528,7 +528,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-07",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-07T16:00:00.000Z",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
       "status": "TBD"
@@ -544,7 +544,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-07",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-07T20:00:00.000Z",
       "venue": "BC Place",
       "city": "Vancouver",
       "status": "TBD"
@@ -560,7 +560,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-09",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-09T20:00:00.000Z",
       "venue": "Gillette Stadium",
       "city": "Foxborough",
       "status": "TBD"
@@ -576,7 +576,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-10",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-10T19:00:00.000Z",
       "venue": "SoFi Stadium",
       "city": "Inglewood",
       "status": "TBD"
@@ -592,7 +592,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-11",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-11T21:00:00.000Z",
       "venue": "Hard Rock Stadium",
       "city": "Miami Gardens",
       "status": "TBD"
@@ -607,8 +607,8 @@
       "penA": null,
       "penB": null,
       "winner": null,
-      "date": "2026-07-11",
-      "kickoffUtc": null,
+      "date": "2026-07-12",
+      "kickoffUtc": "2026-07-12T01:00:00.000Z",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
       "status": "TBD"
@@ -624,7 +624,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-14",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-14T19:00:00.000Z",
       "venue": "AT&T Stadium",
       "city": "Arlington",
       "status": "TBD"
@@ -640,7 +640,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-15",
-      "kickoffUtc": null,
+      "kickoffUtc": "2026-07-15T19:00:00.000Z",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
       "status": "TBD"
@@ -656,7 +656,7 @@
       "penB": null,
       "winner": null,
       "date": "2026-07-19",
-      "kickoffUtc": "2026-07-19T19:00:00Z",
+      "kickoffUtc": "2026-07-19T19:00:00.000Z",
       "venue": "MetLife Stadium",
       "city": "East Rutherford",
       "status": "TBD"
@@ -672,6 +672,6 @@
     "status": "TBD"
   },
   "sources": [
-    "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage"
+    "https://api.zafronix.com (Zafronix World Cup API)"
   ]
 }
