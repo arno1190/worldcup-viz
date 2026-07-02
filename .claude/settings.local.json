@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:sports.yahoo.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.cbssports.com)",
+      "Bash(rtk proxy *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(l['idLeague'], l['strLeague']\\) for l in d.get\\('leagues',[]\\) if 'world cup' in \\(l.get\\('strLeague'\\) or ''\\).lower\\(\\) or 'fifa' in \\(l.get\\('strLeague'\\) or ''\\).lower\\(\\)]\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('title:',d.get\\('title'\\)\\); print\\('extract:',\\(d.get\\('extract'\\) or ''\\)[:400]\\)\")",
+      "WebFetch(domain:www.skysports.com)",
+      "WebFetch(domain:www.nbcsports.com)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_hover"
+    ]
+  }
+}

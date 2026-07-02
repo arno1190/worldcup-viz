@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07090f;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: #e6edf3;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  /* warm vignette echoing the trophy glow at the centre */
+  background:
+    radial-gradient(circle at 50% 47%, rgba(246, 178, 59, 0.09), transparent 40%),
+    radial-gradient(circle at 50% 50%, #0d1119 0%, var(--bg) 72%);
+  min-height: 100vh;
+  font-family: var(--font-sans);
+}

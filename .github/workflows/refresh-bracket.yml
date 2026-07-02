@@ -1,0 +1,43 @@
+name: Refresh bracket data
+
+# Pulls the latest 2026 World Cup knockout results from Wikipedia every night
+# and commits them. With Vercel's Git integration connected, the commit triggers
+# a production redeploy automatically — no secrets required.
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # 03:00 UTC nightly
+  workflow_dispatch: {} # allow manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-bracket
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Update bracket from Wikipedia
+        run: node scripts/update-bracket.mjs
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain data/bracket.json)" ]]; then
+            git config user.name "worldcup-bot"
+            git config user.email "actions@github.com"
+            git add data/bracket.json
+            git commit -m "chore: nightly bracket refresh ($(date -u +%Y-%m-%d))"
+            git push
+            echo "Pushed refreshed bracket."
+          else
+            echo "No bracket changes."
+          fi

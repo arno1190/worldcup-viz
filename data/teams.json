@@ -1,0 +1,196 @@
+{
+  "teams": [
+    {
+      "code": "GER",
+      "name": "Germany",
+      "slug": "de",
+      "color": "#000000"
+    },
+    {
+      "code": "PAR",
+      "name": "Paraguay",
+      "slug": "py",
+      "color": "#D52B1E"
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "slug": "fr",
+      "color": "#002654"
+    },
+    {
+      "code": "SWE",
+      "name": "Sweden",
+      "slug": "se",
+      "color": "#005293"
+    },
+    {
+      "code": "RSA",
+      "name": "South Africa",
+      "slug": "za",
+      "color": "#007749"
+    },
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "slug": "ca",
+      "color": "#FF0000"
+    },
+    {
+      "code": "NED",
+      "name": "Netherlands",
+      "slug": "nl",
+      "color": "#EC7000"
+    },
+    {
+      "code": "MAR",
+      "name": "Morocco",
+      "slug": "ma",
+      "color": "#C1272D"
+    },
+    {
+      "code": "POR",
+      "name": "Portugal",
+      "slug": "pt",
+      "color": "#DA020E"
+    },
+    {
+      "code": "CRO",
+      "name": "Croatia",
+      "slug": "hr",
+      "color": "#FF0000"
+    },
+    {
+      "code": "ESP",
+      "name": "Spain",
+      "slug": "es",
+      "color": "#AA151B"
+    },
+    {
+      "code": "AUT",
+      "name": "Austria",
+      "slug": "at",
+      "color": "#ED2939"
+    },
+    {
+      "code": "USA",
+      "name": "United States",
+      "slug": "us",
+      "color": "#002868"
+    },
+    {
+      "code": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "slug": "ba",
+      "color": "#002395"
+    },
+    {
+      "code": "BEL",
+      "name": "Belgium",
+      "slug": "be",
+      "color": "#E30613"
+    },
+    {
+      "code": "SEN",
+      "name": "Senegal",
+      "slug": "sn",
+      "color": "#00853F"
+    },
+    {
+      "code": "BRA",
+      "name": "Brazil",
+      "slug": "br",
+      "color": "#FFDF00"
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "slug": "jp",
+      "color": "#002D6C"
+    },
+    {
+      "code": "CIV",
+      "name": "Ivory Coast",
+      "slug": "ci",
+      "color": "#FF8200"
+    },
+    {
+      "code": "NOR",
+      "name": "Norway",
+      "slug": "no",
+      "color": "#BA0C2F"
+    },
+    {
+      "code": "MEX",
+      "name": "Mexico",
+      "slug": "mx",
+      "color": "#006847"
+    },
+    {
+      "code": "ECU",
+      "name": "Ecuador",
+      "slug": "ec",
+      "color": "#FFD100"
+    },
+    {
+      "code": "ENG",
+      "name": "England",
+      "slug": "gb-eng",
+      "color": "#001489"
+    },
+    {
+      "code": "COD",
+      "name": "DR Congo",
+      "slug": "cd",
+      "color": "#007FFF"
+    },
+    {
+      "code": "ARG",
+      "name": "Argentina",
+      "slug": "ar",
+      "color": "#75AADB"
+    },
+    {
+      "code": "CPV",
+      "name": "Cabo Verde",
+      "slug": "cv",
+      "color": "#003893"
+    },
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "slug": "au",
+      "color": "#00843D"
+    },
+    {
+      "code": "EGY",
+      "name": "Egypt",
+      "slug": "eg",
+      "color": "#CE1126"
+    },
+    {
+      "code": "SUI",
+      "name": "Switzerland",
+      "slug": "ch",
+      "color": "#D52B1E"
+    },
+    {
+      "code": "ALG",
+      "name": "Algeria",
+      "slug": "dz",
+      "color": "#006233"
+    },
+    {
+      "code": "COL",
+      "name": "Colombia",
+      "slug": "co",
+      "color": "#FCD116"
+    },
+    {
+      "code": "GHA",
+      "name": "Ghana",
+      "slug": "gh",
+      "color": "#006B3F"
+    }
+  ]
+}

@@ -1,0 +1,646 @@
+{
+  "asOf": "2026-07-02",
+  "title": "2026 FIFA World Cup — Road to the Final",
+  "champion": null,
+  "teams": [
+    {
+      "name": "Algeria",
+      "slug": "dz",
+      "color": "#006233"
+    },
+    {
+      "name": "Argentina",
+      "slug": "ar",
+      "color": "#75AADB"
+    },
+    {
+      "name": "Australia",
+      "slug": "au",
+      "color": "#00843D"
+    },
+    {
+      "name": "Austria",
+      "slug": "at",
+      "color": "#ED2939"
+    },
+    {
+      "name": "Belgium",
+      "slug": "be",
+      "color": "#E30613"
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "slug": "ba",
+      "color": "#002395"
+    },
+    {
+      "name": "Brazil",
+      "slug": "br",
+      "color": "#FFDF00"
+    },
+    {
+      "name": "Cabo Verde",
+      "slug": "cv",
+      "color": "#003893"
+    },
+    {
+      "name": "Canada",
+      "slug": "ca",
+      "color": "#FF0000"
+    },
+    {
+      "name": "Colombia",
+      "slug": "co",
+      "color": "#FCD116"
+    },
+    {
+      "name": "Croatia",
+      "slug": "hr",
+      "color": "#FF0000"
+    },
+    {
+      "name": "DR Congo",
+      "slug": "cd",
+      "color": "#007FFF"
+    },
+    {
+      "name": "Ecuador",
+      "slug": "ec",
+      "color": "#FFD100"
+    },
+    {
+      "name": "Egypt",
+      "slug": "eg",
+      "color": "#CE1126"
+    },
+    {
+      "name": "England",
+      "slug": "gb-eng",
+      "color": "#001489"
+    },
+    {
+      "name": "France",
+      "slug": "fr",
+      "color": "#002654"
+    },
+    {
+      "name": "Germany",
+      "slug": "de",
+      "color": "#000000"
+    },
+    {
+      "name": "Ghana",
+      "slug": "gh",
+      "color": "#006B3F"
+    },
+    {
+      "name": "Ivory Coast",
+      "slug": "ci",
+      "color": "#FF8200"
+    },
+    {
+      "name": "Japan",
+      "slug": "jp",
+      "color": "#002D6C"
+    },
+    {
+      "name": "Mexico",
+      "slug": "mx",
+      "color": "#006847"
+    },
+    {
+      "name": "Morocco",
+      "slug": "ma",
+      "color": "#C1272D"
+    },
+    {
+      "name": "Netherlands",
+      "slug": "nl",
+      "color": "#EC7000"
+    },
+    {
+      "name": "Norway",
+      "slug": "no",
+      "color": "#BA0C2F"
+    },
+    {
+      "name": "Paraguay",
+      "slug": "py",
+      "color": "#D52B1E"
+    },
+    {
+      "name": "Portugal",
+      "slug": "pt",
+      "color": "#DA020E"
+    },
+    {
+      "name": "Senegal",
+      "slug": "sn",
+      "color": "#00853F"
+    },
+    {
+      "name": "South Africa",
+      "slug": "za",
+      "color": "#007749"
+    },
+    {
+      "name": "Spain",
+      "slug": "es",
+      "color": "#AA151B"
+    },
+    {
+      "name": "Sweden",
+      "slug": "se",
+      "color": "#005293"
+    },
+    {
+      "name": "Switzerland",
+      "slug": "ch",
+      "color": "#D52B1E"
+    },
+    {
+      "name": "United States",
+      "slug": "us",
+      "color": "#002868"
+    }
+  ],
+  "matches": [
+    {
+      "id": "R32-1",
+      "round": "Round of 32",
+      "teamA": "Germany",
+      "teamB": "Paraguay",
+      "scoreA": 1,
+      "scoreB": 1,
+      "penA": 3,
+      "penB": 4,
+      "winner": "Paraguay",
+      "date": "2026-06-29",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough",
+      "status": "completed"
+    },
+    {
+      "id": "R32-2",
+      "round": "Round of 32",
+      "teamA": "France",
+      "teamB": "Sweden",
+      "scoreA": 3,
+      "scoreB": 0,
+      "penA": null,
+      "penB": null,
+      "winner": "France",
+      "date": "2026-06-30",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford",
+      "status": "completed"
+    },
+    {
+      "id": "R32-3",
+      "round": "Round of 32",
+      "teamA": "South Africa",
+      "teamB": "Canada",
+      "scoreA": 0,
+      "scoreB": 1,
+      "penA": null,
+      "penB": null,
+      "winner": "Canada",
+      "date": "2026-06-28",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood",
+      "status": "completed"
+    },
+    {
+      "id": "R32-4",
+      "round": "Round of 32",
+      "teamA": "Netherlands",
+      "teamB": "Morocco",
+      "scoreA": 1,
+      "scoreB": 1,
+      "penA": 2,
+      "penB": 3,
+      "winner": "Morocco",
+      "date": "2026-06-29",
+      "venue": "Estadio BBVA",
+      "city": "Guadalupe",
+      "status": "completed"
+    },
+    {
+      "id": "R32-5",
+      "round": "Round of 32",
+      "teamA": "Portugal",
+      "teamB": "Croatia",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-02",
+      "venue": "BMO Field",
+      "city": "Toronto",
+      "status": "scheduled"
+    },
+    {
+      "id": "R32-6",
+      "round": "Round of 32",
+      "teamA": "Spain",
+      "teamB": "Austria",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-02",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood",
+      "status": "scheduled"
+    },
+    {
+      "id": "R32-7",
+      "round": "Round of 32",
+      "teamA": "United States",
+      "teamB": "Bosnia and Herzegovina",
+      "scoreA": 2,
+      "scoreB": 0,
+      "penA": null,
+      "penB": null,
+      "winner": "United States",
+      "date": "2026-07-01",
+      "venue": "Levi's Stadium",
+      "city": "Santa Clara",
+      "status": "completed"
+    },
+    {
+      "id": "R32-8",
+      "round": "Round of 32",
+      "teamA": "Belgium",
+      "teamB": "Senegal",
+      "scoreA": 3,
+      "scoreB": 2,
+      "penA": null,
+      "penB": null,
+      "winner": "Belgium",
+      "date": "2026-07-01",
+      "venue": "Lumen Field",
+      "city": "Seattle",
+      "status": "completed"
+    },
+    {
+      "id": "R32-9",
+      "round": "Round of 32",
+      "teamA": "Brazil",
+      "teamB": "Japan",
+      "scoreA": 2,
+      "scoreB": 1,
+      "penA": null,
+      "penB": null,
+      "winner": "Brazil",
+      "date": "2026-06-29",
+      "venue": "NRG Stadium",
+      "city": "Houston",
+      "status": "completed"
+    },
+    {
+      "id": "R32-10",
+      "round": "Round of 32",
+      "teamA": "Ivory Coast",
+      "teamB": "Norway",
+      "scoreA": 1,
+      "scoreB": 2,
+      "penA": null,
+      "penB": null,
+      "winner": "Norway",
+      "date": "2026-06-30",
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "status": "completed"
+    },
+    {
+      "id": "R32-11",
+      "round": "Round of 32",
+      "teamA": "Mexico",
+      "teamB": "Ecuador",
+      "scoreA": 2,
+      "scoreB": 0,
+      "penA": null,
+      "penB": null,
+      "winner": "Mexico",
+      "date": "2026-06-30",
+      "venue": "Estadio Azteca",
+      "city": "Mexico City",
+      "status": "completed"
+    },
+    {
+      "id": "R32-12",
+      "round": "Round of 32",
+      "teamA": "England",
+      "teamB": "DR Congo",
+      "scoreA": 2,
+      "scoreB": 1,
+      "penA": null,
+      "penB": null,
+      "winner": "England",
+      "date": "2026-07-01",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "status": "completed"
+    },
+    {
+      "id": "R32-13",
+      "round": "Round of 32",
+      "teamA": "Argentina",
+      "teamB": "Cabo Verde",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-03",
+      "venue": "Hard Rock Stadium",
+      "city": "Miami Gardens",
+      "status": "scheduled"
+    },
+    {
+      "id": "R32-14",
+      "round": "Round of 32",
+      "teamA": "Australia",
+      "teamB": "Egypt",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-03",
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "status": "scheduled"
+    },
+    {
+      "id": "R32-15",
+      "round": "Round of 32",
+      "teamA": "Switzerland",
+      "teamB": "Algeria",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-02",
+      "venue": "BC Place",
+      "city": "Vancouver",
+      "status": "scheduled"
+    },
+    {
+      "id": "R32-16",
+      "round": "Round of 32",
+      "teamA": "Colombia",
+      "teamB": "Ghana",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-03",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City",
+      "status": "scheduled"
+    },
+    {
+      "id": "R16-1",
+      "round": "Round of 16",
+      "teamA": "Paraguay",
+      "teamB": "France",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-04",
+      "venue": "Lincoln Financial Field",
+      "city": "Philadelphia",
+      "status": "scheduled"
+    },
+    {
+      "id": "R16-2",
+      "round": "Round of 16",
+      "teamA": "Canada",
+      "teamB": "Morocco",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-04",
+      "venue": "NRG Stadium",
+      "city": "Houston",
+      "status": "scheduled"
+    },
+    {
+      "id": "R16-3",
+      "round": "Round of 16",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-06",
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "status": "TBD"
+    },
+    {
+      "id": "R16-4",
+      "round": "Round of 16",
+      "teamA": "United States",
+      "teamB": "Belgium",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-06",
+      "venue": "Lumen Field",
+      "city": "Seattle",
+      "status": "scheduled"
+    },
+    {
+      "id": "R16-5",
+      "round": "Round of 16",
+      "teamA": "Brazil",
+      "teamB": "Norway",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-05",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford",
+      "status": "scheduled"
+    },
+    {
+      "id": "R16-6",
+      "round": "Round of 16",
+      "teamA": "Mexico",
+      "teamB": "England",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-05",
+      "venue": "Estadio Azteca",
+      "city": "Mexico City",
+      "status": "scheduled"
+    },
+    {
+      "id": "R16-7",
+      "round": "Round of 16",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-07",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "status": "TBD"
+    },
+    {
+      "id": "R16-8",
+      "round": "Round of 16",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-07",
+      "venue": "BC Place",
+      "city": "Vancouver",
+      "status": "TBD"
+    },
+    {
+      "id": "QF-1",
+      "round": "Quarter-finals",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-09",
+      "venue": "Gillette Stadium",
+      "city": "Foxborough",
+      "status": "TBD"
+    },
+    {
+      "id": "QF-2",
+      "round": "Quarter-finals",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-10",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood",
+      "status": "TBD"
+    },
+    {
+      "id": "QF-3",
+      "round": "Quarter-finals",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-11",
+      "venue": "Hard Rock Stadium",
+      "city": "Miami Gardens",
+      "status": "TBD"
+    },
+    {
+      "id": "QF-4",
+      "round": "Quarter-finals",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-11",
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City",
+      "status": "TBD"
+    },
+    {
+      "id": "SF-1",
+      "round": "Semi-finals",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-14",
+      "venue": "AT&T Stadium",
+      "city": "Arlington",
+      "status": "TBD"
+    },
+    {
+      "id": "SF-2",
+      "round": "Semi-finals",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-15",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "status": "TBD"
+    },
+    {
+      "id": "F",
+      "round": "Final",
+      "teamA": "TBD",
+      "teamB": "TBD",
+      "scoreA": null,
+      "scoreB": null,
+      "penA": null,
+      "penB": null,
+      "winner": null,
+      "date": "2026-07-19",
+      "venue": "MetLife Stadium",
+      "city": "East Rutherford",
+      "status": "TBD"
+    }
+  ],
+  "thirdPlace": {
+    "teamA": "TBD",
+    "teamB": "TBD",
+    "scoreA": null,
+    "scoreB": null,
+    "winner": null,
+    "date": "2026-07-18",
+    "status": "TBD"
+  },
+  "sources": [
+    "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage"
+  ]
+}
