@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Stats } from "@/lib/types";
+import { formatDate } from "@/lib/bracket";
 
 type TabKey = "scorers" | "assists" | "attack" | "defense";
 
@@ -87,7 +88,7 @@ export default function RankingPanel({ stats }: { stats: Stats }) {
           Tournament rankings
         </h2>
         <p className="text-xs text-slate-500">
-          Group stage + knockout · as of 2 Jul 2026
+          Group stage + knockout · as of {formatDate(stats.asOf)}
         </p>
       </div>
 

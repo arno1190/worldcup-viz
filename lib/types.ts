@@ -8,6 +8,24 @@ export type Round =
 
 export type MatchStatus = "completed" | "scheduled" | "live" | "TBD";
 
+/** A goal event on the match timeline. `team` is the side: "A" = teamA. */
+export interface MatchGoal {
+  minute: number;
+  team: "A" | "B";
+  scorer: string;
+}
+
+/** Per-match statistics, each value a [teamA, teamB] pair. */
+export interface MatchStats {
+  possession: [number, number];
+  shots: [number, number];
+  shotsOnTarget: [number, number];
+  corners: [number, number];
+  fouls: [number, number];
+  xg: [number, number];
+  formation?: [string, string];
+}
+
 /** A national team competing in the knockout stage. */
 export interface Team {
   /** Full country name, used as the key everywhere. */
@@ -36,6 +54,12 @@ export interface Match {
   venue: string | null;
   city: string | null;
   status: MatchStatus;
+  /** Goal timeline (scorer + minute), when available. */
+  goals?: MatchGoal[] | null;
+  attendance?: number | null;
+  referee?: string | null;
+  /** Rich match statistics, cached once a match is completed. */
+  stats?: MatchStats | null;
 }
 
 export interface ThirdPlace {

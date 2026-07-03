@@ -376,15 +376,14 @@ export default function RadialBracket({ bracket }: Props) {
             );
           })()
         ) : (
-          <text
-            x={layout.center}
-            y={layout.center}
-            textAnchor="middle"
-            dominantBaseline="central"
-            style={{ fontSize: 66 }}
-          >
-            🏆
-          </text>
+          <image
+            href="/trophy.png"
+            x={layout.center - 52}
+            y={layout.center - 52}
+            width={104}
+            height={104}
+            preserveAspectRatio="xMidYMid meet"
+          />
         )}
       </svg>
 
@@ -395,8 +394,7 @@ export default function RadialBracket({ bracket }: Props) {
 
 /* -------------------------------------------------------------- tooltip card */
 
-const TIP_W = 256; // matches w-64
-const TIP_H = 150; // approximate card height
+const TIP_W = 288; // matches w-72
 
 function MatchTip({
   tip,
@@ -409,8 +407,9 @@ function MatchTip({
   const m = tip.match;
   const a = teamByName.get(m.teamA);
   const b = teamByName.get(m.teamB);
-  const sc = scoreline(m);
   const kickoff = formatKickoff(m.kickoffUtc);
+  const colorA = a ? glowColor(a.color) : "#94a3b8";
+  const colorB = b ? glowColor(b.color) : "#94a3b8";
   const statusLabel =
     m.status === "completed"
       ? "Full time"
@@ -420,16 +419,19 @@ function MatchTip({
           ? "Scheduled"
           : "Awaiting teams";
 
-  // Flip the card toward the interior when the cursor is close enough to an edge
-  // that the card would otherwise overflow the container.
+  // Estimate height so the flip keeps the card on-screen.
+  const estH =
+    150 +
+    (m.goals?.length ? 24 + m.goals.length * 16 : 0) +
+    (m.stats ? 150 : 0);
   const flipX = tip.x + 16 + TIP_W > tip.cw;
-  const flipY = tip.y + 16 + TIP_H > tip.ch;
+  const flipY = tip.y + 16 + estH > tip.ch;
   const left = Math.max(4, flipX ? tip.x - TIP_W - 16 : tip.x + 16);
-  const top = Math.max(4, flipY ? tip.y - TIP_H - 4 : tip.y + 16);
+  const top = Math.max(4, flipY ? Math.max(4, tip.ch - estH - 4) : tip.y + 16);
 
   return (
     <div
-      className="pointer-events-none absolute z-20 w-64 rounded-xl border border-white/10 bg-[#0d1117]/95 p-3 text-sm shadow-2xl backdrop-blur"
+      className="pointer-events-none absolute z-20 w-72 rounded-xl border border-white/10 bg-[#0d1117]/95 p-3 text-sm shadow-2xl backdrop-blur"
       style={{ left, top }}
     >
       <div className="mb-2 flex items-center justify-between text-[11px] uppercase tracking-wider text-slate-400">
@@ -460,7 +462,76 @@ function MatchTip({
         pen={m.penB}
         winner={m.winner === m.teamB}
       />
-      {(sc || m.venue || m.date || kickoff) && (
+
+      {m.goals && m.goals.length > 0 && (
+        <div className="mt-2 border-t border-white/10 pt-2">
+          <div className="space-y-0.5">
+            {[...m.goals]
+              .sort((g1, g2) => g1.minute - g2.minute)
+              .map((g, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-1.5 text-[11px] text-slate-300"
+                >
+                  <span
+                    className="inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+                    style={{ background: g.team === "A" ? colorA : colorB }}
+                  />
+                  <span className="w-7 shrink-0 tabular-nums text-slate-500">
+                    {g.minute}&apos;
+                  </span>
+                  <span className="truncate">{g.scorer}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      {m.stats && (
+        <div className="mt-2 border-t border-white/10 pt-2">
+          <StatRow
+            label="Possession"
+            a={m.stats.possession[0]}
+            b={m.stats.possession[1]}
+            suffix="%"
+            colorA={colorA}
+            colorB={colorB}
+          />
+          <StatRow
+            label="Shots (on target)"
+            a={m.stats.shots[0]}
+            b={m.stats.shots[1]}
+            subA={m.stats.shotsOnTarget[0]}
+            subB={m.stats.shotsOnTarget[1]}
+            colorA={colorA}
+            colorB={colorB}
+          />
+          <StatRow
+            label="Expected goals"
+            a={m.stats.xg[0]}
+            b={m.stats.xg[1]}
+            decimals
+            colorA={colorA}
+            colorB={colorB}
+          />
+          <StatRow
+            label="Corners"
+            a={m.stats.corners[0]}
+            b={m.stats.corners[1]}
+            colorA={colorA}
+            colorB={colorB}
+          />
+          {m.stats.formation && (
+            <div className="mt-1 flex justify-between text-[10px] text-slate-500">
+              <span>{m.stats.formation[0]}</span>
+              <span className="uppercase tracking-wider">formation</span>
+              <span>{m.stats.formation[1]}</span>
+            </div>
+          )}
+        </div>
+      )}
+
+      {(m.venue || m.date || kickoff || m.attendance || m.referee) && (
         <div className="mt-2 border-t border-white/10 pt-2 text-[11px] leading-relaxed text-slate-400">
           {kickoff ? (
             <div>
@@ -477,8 +548,70 @@ function MatchTip({
               {m.city ? `, ${m.city}` : ""}
             </div>
           )}
+          {(m.attendance || m.referee) && (
+            <div className="text-slate-500">
+              {m.attendance ? `${m.attendance.toLocaleString()} att.` : ""}
+              {m.attendance && m.referee ? " · " : ""}
+              {m.referee ? `Ref: ${m.referee}` : ""}
+            </div>
+          )}
         </div>
       )}
+    </div>
+  );
+}
+
+function StatRow({
+  label,
+  a,
+  b,
+  subA,
+  subB,
+  suffix = "",
+  decimals = false,
+  colorA,
+  colorB,
+}: {
+  label: string;
+  a: number | null;
+  b: number | null;
+  subA?: number | null;
+  subB?: number | null;
+  suffix?: string;
+  decimals?: boolean;
+  colorA: string;
+  colorB: string;
+}) {
+  const av = a ?? 0;
+  const bv = b ?? 0;
+  const total = av + bv || 1;
+  const fmt = (n: number | null | undefined) =>
+    n == null ? "–" : decimals ? n.toFixed(2) : String(n);
+  return (
+    <div className="mb-1.5">
+      <div className="flex items-baseline justify-between text-[11px]">
+        <span className="tabular-nums font-medium text-slate-200">
+          {fmt(a)}
+          {suffix}
+          {subA != null && (
+            <span className="ml-0.5 text-slate-500">({subA})</span>
+          )}
+        </span>
+        <span className="text-[10px] uppercase tracking-wider text-slate-500">
+          {label}
+        </span>
+        <span className="tabular-nums font-medium text-slate-200">
+          {subB != null && (
+            <span className="mr-0.5 text-slate-500">({subB})</span>
+          )}
+          {fmt(b)}
+          {suffix}
+        </span>
+      </div>
+      <div className="mt-0.5 flex h-1 overflow-hidden rounded-full bg-white/5">
+        <div style={{ width: `${(av / total) * 100}%`, background: colorA }} />
+        <div style={{ width: `${(bv / total) * 100}%`, background: colorB }} />
+      </div>
     </div>
   );
 }

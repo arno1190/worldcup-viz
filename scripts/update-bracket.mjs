@@ -31,6 +31,25 @@ function die(msg) {
   process.exit(1);
 }
 
+// Pull the compact stat set we display from a single-match `statistics` block.
+function extractStats(m) {
+  const s = m?.statistics;
+  const h = s?.home,
+    a = s?.away;
+  if (!h || !a || h.possessionPct == null) return null;
+  const pair = (x, y) => [x ?? null, y ?? null];
+  const st = {
+    possession: pair(h.possessionPct, a.possessionPct),
+    shots: pair(h.shotsTotal, a.shotsTotal),
+    shotsOnTarget: pair(h.shotsOnGoal, a.shotsOnGoal),
+    corners: pair(h.corners, a.corners),
+    fouls: pair(h.fouls, a.fouls),
+    xg: pair(h.expectedGoals, a.expectedGoals),
+  };
+  if (m.formations?.home && m.formations?.away) st.formation = [m.formations.home, m.formations.away];
+  return st;
+}
+
 async function main() {
   const teamsCfg = JSON.parse(readFileSync(join(root, "data", "teams.json"), "utf8")).teams;
   const venuesByCity = JSON.parse(readFileSync(join(root, "data", "venues.json"), "utf8"));
@@ -41,16 +60,56 @@ async function main() {
   const stages = bracket?.stages;
   if (!stages || !Array.isArray(stages.round_of_32)) die("no bracket.stages in response");
 
-  // Penalty shootout scores live on /matches, keyed by matchNo.
-  const pensByNo = new Map();
+  // The /matches list carries penalties, attendance, referee and the goal
+  // timeline for every match — no extra calls needed for those.
+  const detailByNo = new Map();
   try {
     const matches = (await zget(`/matches?year=${SEASON}`))?.data || [];
     for (const m of matches) {
-      if (m.penalties && m.penalties.home != null) pensByNo.set(m.matchNo, m.penalties);
+      detailByNo.set(m.matchNo, {
+        penalties: m.penalties && m.penalties.home != null ? m.penalties : null,
+        attendance: typeof m.attendance === "number" ? m.attendance : null,
+        referee: m.referee?.name || null,
+        goals: (m.goals || [])
+          .filter((g) => g && typeof g.minute === "number" && g.scorer)
+          .map((g) => ({ minute: g.minute, team: g.team === "home" ? "A" : "B", scorer: String(g.scorer) })),
+      });
     }
   } catch (e) {
-    console.warn("penalty fetch failed (non-fatal):", e.message);
+    console.warn("match-list fetch failed (non-fatal):", e.message);
   }
+
+  // Rich per-match statistics live on /matches/{id}. They're immutable once a
+  // match finishes, so we fetch each completed tie's stats ONCE and cache it in
+  // bracket.json — a few calls per night, capped to protect the daily quota.
+  const STATS_FETCH_CAP = 24;
+  const prevStatsByPair = new Map();
+  for (const m of prev.matches || []) {
+    if (m.stats) prevStatsByPair.set([m.teamA, m.teamB].sort().join("|"), m.stats);
+  }
+  const statsByNo = new Map();
+  let fetched = 0;
+  for (const st of Object.values(STAGE)) void st;
+  const koFlat = Object.entries(STAGE).flatMap(([k]) => stages[k] || []);
+  for (const m of koFlat) {
+    if (!m.winner || !m.home || !m.away) continue; // only completed ties
+    const pairKey = [resolve(m.home).name, resolve(m.away).name].sort().join("|");
+    const cached = prevStatsByPair.get(pairKey);
+    if (cached) {
+      statsByNo.set(m.matchNo, cached);
+      continue;
+    }
+    if (fetched >= STATS_FETCH_CAP) continue;
+    try {
+      const detail = await zget(`/matches/2026-${String(m.matchNo).padStart(3, "0")}`);
+      fetched++;
+      const s = extractStats(detail?.data || detail);
+      if (s) statsByNo.set(m.matchNo, s);
+    } catch (e) {
+      console.warn(`stats fetch failed for match ${m.matchNo} (non-fatal):`, e.message);
+    }
+  }
+  if (fetched) console.log(`fetched stats for ${fetched} newly-completed ties`);
 
   // Flatten KO matches and assign provisional ids per stage (sorted by matchNo).
   const koMatches = [];
@@ -78,7 +137,8 @@ async function main() {
     const teamB = m.away ? resolve(m.away).name : "TBD";
     const bothKnown = m.home && m.away;
     const winner = m.winner ? resolve(m.winner).name : null;
-    const pen = pensByNo.get(m.matchNo);
+    const detail = detailByNo.get(m.matchNo) || {};
+    const pen = detail.penalties;
     const scoreA = m.homeScore != null ? m.homeScore : null;
     const scoreB = m.awayScore != null ? m.awayScore : null;
     const city = m.city || null;
@@ -103,6 +163,10 @@ async function main() {
       venue: (city && venuesByCity[city]) || m.stadium || null,
       city,
       status,
+      goals: status === "completed" && detail.goals?.length ? detail.goals : null,
+      attendance: status === "completed" ? (detail.attendance ?? null) : null,
+      referee: status === "completed" ? (detail.referee ?? null) : null,
+      stats: status === "completed" ? (statsByNo.get(m.matchNo) ?? null) : null,
       feedsIntoId: parentOfNo.get(m.matchNo) || null,
     };
   });

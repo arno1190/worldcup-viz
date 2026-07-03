@@ -120,6 +120,10 @@ export function canonicalize(raw, rawTeams, flags, meta) {
       venue: cleanText(m.venue),
       city: cleanText(m.city),
       status: m.status || "TBD",
+      goals: m.goals ?? null,
+      attendance: m.attendance ?? null,
+      referee: m.referee ?? null,
+      stats: m.stats ?? null,
     };
   });
   outMatches.sort((a, b) => RANK[prefixOf(a.id)] - RANK[prefixOf(b.id)] || cmpNum(a.id, b.id));
