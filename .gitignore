@@ -42,3 +42,6 @@ next-env.d.ts
 
 # playwright mcp screenshots
 .playwright-mcp/
+
+# generated freshness marker
+public/version.json

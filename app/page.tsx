@@ -1,5 +1,6 @@
 import RadialBracket from "@/components/RadialBracket";
 import RankingPanel from "@/components/RankingPanel";
+import FreshnessWatcher from "@/components/FreshnessWatcher";
 import { getBracket, formatDate } from "@/lib/bracket";
 import statsData from "@/data/stats.json";
 import type { Stats } from "@/lib/types";
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen w-full flex-col lg:flex-row">
+      <FreshnessWatcher asOf={bracket.asOf} played={played} />
       {/* main — bracket (2/3) */}
       <section className="flex w-full flex-col items-center justify-center px-4 py-5 lg:w-2/3">
         <header className="mb-3 text-center">
