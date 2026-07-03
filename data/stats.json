@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-02",
+  "asOf": "2026-07-03",
   "topScorers": [
     {
       "player": "Mbappé",
@@ -32,6 +32,12 @@
       "goals": 4
     },
     {
+      "player": "Oyarzabal",
+      "team": "Spain",
+      "iso2": "es",
+      "goals": 4
+    },
+    {
       "player": "Vinícius",
       "team": "Brazil",
       "iso2": "br",
@@ -53,12 +59,6 @@
       "player": "Gakpo",
       "team": "Netherlands",
       "iso2": "nl",
-      "goals": 3
-    },
-    {
-      "player": "I. Sarr",
-      "team": "Senegal",
-      "iso2": "sn",
       "goals": 3
     }
   ],
@@ -184,10 +184,10 @@
       "matches": 4
     },
     {
-      "team": "Argentina",
-      "iso2": "ar",
-      "goalsFor": 8,
-      "matches": 3
+      "team": "Switzerland",
+      "iso2": "ch",
+      "goalsFor": 9,
+      "matches": 4
     }
   ],
   "bestDefense": [
@@ -202,8 +202,8 @@
       "team": "Spain",
       "iso2": "es",
       "goalsAgainst": 0,
-      "cleanSheets": 3,
-      "matches": 3
+      "cleanSheets": 4,
+      "matches": 4
     },
     {
       "team": "Argentina",
@@ -220,13 +220,6 @@
       "matches": 3
     },
     {
-      "team": "Portugal",
-      "iso2": "pt",
-      "goalsAgainst": 1,
-      "cleanSheets": 2,
-      "matches": 3
-    },
-    {
       "team": "Brazil",
       "iso2": "br",
       "goalsAgainst": 2,
@@ -236,6 +229,13 @@
     {
       "team": "France",
       "iso2": "fr",
+      "goalsAgainst": 2,
+      "cleanSheets": 2,
+      "matches": 4
+    },
+    {
+      "team": "Portugal",
+      "iso2": "pt",
       "goalsAgainst": 2,
       "cleanSheets": 2,
       "matches": 4

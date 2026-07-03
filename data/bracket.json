@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-02",
+  "asOf": "2026-07-03",
   "title": "2026 FIFA World Cup — Road to the Final",
   "champion": null,
   "teams": [
@@ -234,32 +234,32 @@
       "round": "Round of 32",
       "teamA": "Portugal",
       "teamB": "Croatia",
-      "scoreA": null,
-      "scoreB": null,
+      "scoreA": 2,
+      "scoreB": 1,
       "penA": null,
       "penB": null,
-      "winner": null,
+      "winner": "Portugal",
       "date": "2026-07-02",
       "kickoffUtc": "2026-07-02T23:00:00.000Z",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "scheduled"
+      "status": "completed"
     },
     {
       "id": "R32-6",
       "round": "Round of 32",
       "teamA": "Spain",
       "teamB": "Austria",
-      "scoreA": null,
-      "scoreB": null,
+      "scoreA": 3,
+      "scoreB": 0,
       "penA": null,
       "penB": null,
-      "winner": null,
+      "winner": "Spain",
       "date": "2026-07-02",
       "kickoffUtc": "2026-07-02T19:00:00.000Z",
       "venue": "SoFi Stadium",
       "city": "Inglewood",
-      "status": "scheduled"
+      "status": "completed"
     },
     {
       "id": "R32-7",
@@ -394,16 +394,16 @@
       "round": "Round of 32",
       "teamA": "Switzerland",
       "teamB": "Algeria",
-      "scoreA": null,
-      "scoreB": null,
+      "scoreA": 2,
+      "scoreB": 0,
       "penA": null,
       "penB": null,
-      "winner": null,
+      "winner": "Switzerland",
       "date": "2026-07-03",
       "kickoffUtc": "2026-07-03T03:00:00.000Z",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "scheduled"
+      "status": "completed"
     },
     {
       "id": "R32-16",
@@ -456,8 +456,8 @@
     {
       "id": "R16-3",
       "round": "Round of 16",
-      "teamA": "TBD",
-      "teamB": "TBD",
+      "teamA": "Portugal",
+      "teamB": "Spain",
       "scoreA": null,
       "scoreB": null,
       "penA": null,
@@ -467,7 +467,7 @@
       "kickoffUtc": "2026-07-06T19:00:00.000Z",
       "venue": "AT&T Stadium",
       "city": "Arlington",
-      "status": "TBD"
+      "status": "scheduled"
     },
     {
       "id": "R16-4",
@@ -536,7 +536,7 @@
     {
       "id": "R16-8",
       "round": "Round of 16",
-      "teamA": "TBD",
+      "teamA": "Switzerland",
       "teamB": "TBD",
       "scoreA": null,
       "scoreB": null,
