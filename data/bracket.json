@@ -869,6 +869,11 @@
       "status": "completed",
       "goals": [
         {
+          "minute": null,
+          "team": "A",
+          "scorer": "H. Kane"
+        },
+        {
           "minute": 7,
           "team": "B",
           "scorer": "B. Cipenga"

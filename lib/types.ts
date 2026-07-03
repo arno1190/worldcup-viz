@@ -10,7 +10,7 @@ export type MatchStatus = "completed" | "scheduled" | "live" | "TBD";
 
 /** A goal event on the match timeline. `team` is the side: "A" = teamA. */
 export interface MatchGoal {
-  minute: number;
+  minute: number | null;
   team: "A" | "B";
   scorer: string;
 }

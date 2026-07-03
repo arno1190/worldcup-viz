@@ -57,6 +57,46 @@ const ALIASES = {
   "cape verde": "Cabo Verde",
 };
 
+/* ------------------------------------------------------- scorer-name hygiene */
+// Zafronix goal `scorer` strings are dirty and inconsistent across matches:
+// "Kane", "H. Kane", "Kane 12' pen". These helpers give (a) a stable identity
+// key that merges all variants of one player, and (b) a clean display name.
+
+const SCORER_STOP = new Set(["pen", "penalty", "og", "aet", "ph"]);
+
+/** Identity key: fold accents, drop minute markers, initials and annotations. */
+export function scorerKey(name) {
+  return String(name)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z ]/g, " ")
+    .split(/\s+/)
+    .filter((t) => t.length > 1 && !SCORER_STOP.has(t))
+    .join(" ")
+    .trim();
+}
+
+/** Human display: strip minute markers, tidy pen/og into a tag. */
+export function cleanScorer(name) {
+  let s = String(name).replace(/&nbsp;|&#160;/g, " ");
+  s = s.replace(/\b\d+(\+\d+)?['’]/g, ""); // "12'", "45+2'"
+  s = s.replace(/\s+/g, " ").trim();
+  s = s.replace(/\bpen\b/i, "(pen)").replace(/\bog\b/i, "(og)").replace(/\baet\b/i, "");
+  return s.replace(/\s+/g, " ").trim();
+}
+
+/** Pick the nicer of two display candidates (no tag > no initial > longer). */
+export function pickScorerDisplay(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+  const score = (s) => (/[()]/.test(s) ? 0 : 2) + (/^[A-Za-z]\.\s/.test(s) ? 0 : 1);
+  const sa = score(a);
+  const sb = score(b);
+  if (sa !== sb) return sa > sb ? a : b;
+  return b.length > a.length ? b : a;
+}
+
 let _resolver = null;
 
 /**

@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { canonicalize } from "./lib/canonicalize.mjs";
-import { zget, teamResolver, SEASON } from "./lib/zafronix.mjs";
+import { zget, teamResolver, SEASON, cleanScorer } from "./lib/zafronix.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -71,8 +71,12 @@ async function main() {
         attendance: typeof m.attendance === "number" ? m.attendance : null,
         referee: m.referee?.name || null,
         goals: (m.goals || [])
-          .filter((g) => g && typeof g.minute === "number" && g.scorer)
-          .map((g) => ({ minute: g.minute, team: g.team === "home" ? "A" : "B", scorer: String(g.scorer) })),
+          .filter((g) => g && g.scorer)
+          .map((g) => ({
+            minute: typeof g.minute === "number" ? g.minute : null,
+            team: g.team === "home" ? "A" : "B",
+            scorer: cleanScorer(g.scorer),
+          })),
       });
     }
   } catch (e) {

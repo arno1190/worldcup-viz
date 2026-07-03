@@ -467,7 +467,7 @@ function MatchTip({
         <div className="mt-2 border-t border-white/10 pt-2">
           <div className="space-y-0.5">
             {[...m.goals]
-              .sort((g1, g2) => g1.minute - g2.minute)
+              .sort((g1, g2) => (g1.minute ?? 999) - (g2.minute ?? 999))
               .map((g, i) => (
                 <div
                   key={i}
@@ -478,7 +478,7 @@ function MatchTip({
                     style={{ background: g.team === "A" ? colorA : colorB }}
                   />
                   <span className="w-7 shrink-0 tabular-nums text-slate-500">
-                    {g.minute}&apos;
+                    {g.minute == null ? "" : `${g.minute}'`}
                   </span>
                   <span className="truncate">{g.scorer}</span>
                 </div>

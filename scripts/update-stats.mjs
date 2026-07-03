@@ -11,7 +11,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { zget, teamResolver, SEASON } from "./lib/zafronix.mjs";
+import { zget, teamResolver, SEASON, scorerKey, cleanScorer, pickScorerDisplay } from "./lib/zafronix.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -23,25 +23,6 @@ function die(msg) {
   process.exit(1);
 }
 
-// Merge scorer-name variants: fold accents, drop a leading initial ("K. ").
-function scorerKey(name) {
-  return String(name)
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/^[a-z]\.\s*/, "")
-    .replace(/[^a-z ]/g, " ")
-    .trim()
-    .replace(/\s+/g, " ");
-}
-// Prefer a display variant with no leading initial, then the longest.
-function betterName(a, b) {
-  if (!a) return b;
-  const ai = /^[A-Za-z]\.\s/.test(a),
-    bi = /^[A-Za-z]\.\s/.test(b);
-  if (ai !== bi) return ai ? b : a;
-  return b.length > a.length ? b : a;
-}
 const isOwnGoal = (s) => /\bog\b|own goal/i.test(String(s));
 
 async function main() {
@@ -62,14 +43,14 @@ async function main() {
       const team = resolve(g.team === "home" ? m.homeTeam : m.awayTeam);
       const k = scorerKey(g.scorer) + "|" + team.name;
       const cur = scorers.get(k) || { display: "", team: team.name, iso2: team.slug, goals: 0 };
-      cur.display = betterName(cur.display, g.scorer);
+      cur.display = pickScorerDisplay(cur.display, cleanScorer(g.scorer));
       cur.goals += 1;
       scorers.set(k, cur);
       const aName = g.assist || g.assistedBy || g.assist_by;
       if (aName) {
         const ak = scorerKey(aName) + "|" + team.name;
         const ac = assists.get(ak) || { display: "", team: team.name, iso2: team.slug, assists: 0 };
-        ac.display = betterName(ac.display, aName);
+        ac.display = pickScorerDisplay(ac.display, cleanScorer(aName));
         ac.assists += 1;
         assists.set(ak, ac);
       }
