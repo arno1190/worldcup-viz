@@ -1,16 +1,16 @@
 {
-  "asOf": "2026-07-03",
+  "asOf": "2026-07-04",
   "topScorers": [
-    {
-      "player": "Mbappé",
-      "team": "France",
-      "iso2": "fr",
-      "goals": 6
-    },
     {
       "player": "Messi",
       "team": "Argentina",
       "iso2": "ar",
+      "goals": 7
+    },
+    {
+      "player": "Mbappé",
+      "team": "France",
+      "iso2": "fr",
       "goals": 6
     },
     {
@@ -136,6 +136,12 @@
       "matches": 4
     },
     {
+      "team": "Argentina",
+      "iso2": "ar",
+      "goalsFor": 11,
+      "matches": 4
+    },
+    {
       "team": "Germany",
       "iso2": "de",
       "goalsFor": 11,
@@ -182,12 +188,6 @@
       "iso2": "ca",
       "goalsFor": 9,
       "matches": 4
-    },
-    {
-      "team": "Switzerland",
-      "iso2": "ch",
-      "goalsFor": 9,
-      "matches": 4
     }
   ],
   "bestDefense": [
@@ -206,18 +206,11 @@
       "matches": 4
     },
     {
-      "team": "Argentina",
-      "iso2": "ar",
-      "goalsAgainst": 1,
-      "cleanSheets": 2,
-      "matches": 3
-    },
-    {
       "team": "Colombia",
       "iso2": "co",
       "goalsAgainst": 1,
-      "cleanSheets": 2,
-      "matches": 3
+      "cleanSheets": 3,
+      "matches": 4
     },
     {
       "team": "Brazil",
@@ -241,25 +234,32 @@
       "matches": 4
     },
     {
+      "team": "Argentina",
+      "iso2": "ar",
+      "goalsAgainst": 3,
+      "cleanSheets": 2,
+      "matches": 4
+    },
+    {
       "team": "Australia",
       "iso2": "au",
-      "goalsAgainst": 2,
+      "goalsAgainst": 3,
       "cleanSheets": 2,
-      "matches": 3
+      "matches": 4
     },
     {
-      "team": "Cabo Verde",
-      "iso2": "cv",
-      "goalsAgainst": 2,
+      "team": "Canada",
+      "iso2": "ca",
+      "goalsAgainst": 3,
       "cleanSheets": 2,
-      "matches": 3
+      "matches": 4
     },
     {
-      "team": "Ghana",
-      "iso2": "gh",
-      "goalsAgainst": 2,
+      "team": "England",
+      "iso2": "gb-eng",
+      "goalsAgainst": 3,
       "cleanSheets": 2,
-      "matches": 3
+      "matches": 4
     }
   ]
 }
