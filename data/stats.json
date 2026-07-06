@@ -1,6 +1,18 @@
 {
-  "asOf": "2026-07-04",
+  "asOf": "2026-07-06",
   "topScorers": [
+    {
+      "player": "Haaland",
+      "team": "Norway",
+      "iso2": "no",
+      "goals": 7
+    },
+    {
+      "player": "Mbappé",
+      "team": "France",
+      "iso2": "fr",
+      "goals": 7
+    },
     {
       "player": "Messi",
       "team": "Argentina",
@@ -8,27 +20,21 @@
       "goals": 7
     },
     {
-      "player": "Mbappé",
-      "team": "France",
-      "iso2": "fr",
-      "goals": 6
-    },
-    {
-      "player": "Haaland",
-      "team": "Norway",
-      "iso2": "no",
-      "goals": 5
-    },
-    {
       "player": "Kane",
       "team": "England",
       "iso2": "gb-eng",
-      "goals": 5
+      "goals": 6
     },
     {
       "player": "Dembélé",
       "team": "France",
       "iso2": "fr",
+      "goals": 4
+    },
+    {
+      "player": "I. Sarr",
+      "team": "Senegal",
+      "iso2": "sn",
       "goals": 4
     },
     {
@@ -44,22 +50,16 @@
       "goals": 4
     },
     {
+      "player": "Quiñones",
+      "team": "Mexico",
+      "iso2": "mx",
+      "goals": 4
+    },
+    {
       "player": "Vinícius",
       "team": "Brazil",
       "iso2": "br",
       "goals": 4
-    },
-    {
-      "player": "Brobbey",
-      "team": "Netherlands",
-      "iso2": "nl",
-      "goals": 3
-    },
-    {
-      "player": "Cunha",
-      "team": "Brazil",
-      "iso2": "br",
-      "goals": 3
     }
   ],
   "topAssists": [
@@ -132,14 +132,26 @@
     {
       "team": "France",
       "iso2": "fr",
-      "goalsFor": 13,
-      "matches": 4
+      "goalsFor": 14,
+      "matches": 5
+    },
+    {
+      "team": "Norway",
+      "iso2": "no",
+      "goalsFor": 12,
+      "matches": 5
     },
     {
       "team": "Argentina",
       "iso2": "ar",
       "goalsFor": 11,
       "matches": 4
+    },
+    {
+      "team": "England",
+      "iso2": "gb-eng",
+      "goalsFor": 11,
+      "matches": 5
     },
     {
       "team": "Germany",
@@ -154,50 +166,31 @@
       "matches": 4
     },
     {
-      "team": "Norway",
-      "iso2": "no",
+      "team": "Brazil",
+      "iso2": "br",
       "goalsFor": 10,
-      "matches": 4
+      "matches": 5
+    },
+    {
+      "team": "Mexico",
+      "iso2": "mx",
+      "goalsFor": 10,
+      "matches": 5
+    },
+    {
+      "team": "Morocco",
+      "iso2": "ma",
+      "goalsFor": 10,
+      "matches": 5
     },
     {
       "team": "Senegal",
       "iso2": "sn",
       "goalsFor": 10,
       "matches": 4
-    },
-    {
-      "team": "United States",
-      "iso2": "us",
-      "goalsFor": 10,
-      "matches": 4
-    },
-    {
-      "team": "Belgium",
-      "iso2": "be",
-      "goalsFor": 9,
-      "matches": 4
-    },
-    {
-      "team": "Brazil",
-      "iso2": "br",
-      "goalsFor": 9,
-      "matches": 4
-    },
-    {
-      "team": "Canada",
-      "iso2": "ca",
-      "goalsFor": 9,
-      "matches": 4
     }
   ],
   "bestDefense": [
-    {
-      "team": "Mexico",
-      "iso2": "mx",
-      "goalsAgainst": 0,
-      "cleanSheets": 4,
-      "matches": 4
-    },
     {
       "team": "Spain",
       "iso2": "es",
@@ -213,18 +206,11 @@
       "matches": 4
     },
     {
-      "team": "Brazil",
-      "iso2": "br",
-      "goalsAgainst": 2,
-      "cleanSheets": 2,
-      "matches": 4
-    },
-    {
       "team": "France",
       "iso2": "fr",
       "goalsAgainst": 2,
-      "cleanSheets": 2,
-      "matches": 4
+      "cleanSheets": 3,
+      "matches": 5
     },
     {
       "team": "Portugal",
@@ -232,6 +218,13 @@
       "goalsAgainst": 2,
       "cleanSheets": 2,
       "matches": 4
+    },
+    {
+      "team": "Mexico",
+      "iso2": "mx",
+      "goalsAgainst": 3,
+      "cleanSheets": 4,
+      "matches": 5
     },
     {
       "team": "Argentina",
@@ -248,18 +241,25 @@
       "matches": 4
     },
     {
-      "team": "Canada",
-      "iso2": "ca",
+      "team": "Ghana",
+      "iso2": "gh",
       "goalsAgainst": 3,
       "cleanSheets": 2,
       "matches": 4
     },
     {
-      "team": "England",
-      "iso2": "gb-eng",
+      "team": "Switzerland",
+      "iso2": "ch",
       "goalsAgainst": 3,
-      "cleanSheets": 2,
+      "cleanSheets": 1,
       "matches": 4
+    },
+    {
+      "team": "Iran",
+      "iso2": "ir",
+      "goalsAgainst": 3,
+      "cleanSheets": 1,
+      "matches": 3
     }
   ]
 }

@@ -7,7 +7,7 @@ name: Refresh data
 
 on:
   schedule:
-    - cron: "0 3 * * *" # 03:00 UTC nightly
+    - cron: "0 2 * * *" # 02:00 UTC nightly (GitHub may delay scheduled runs)
   workflow_dispatch: {} # allow manual runs
 
 permissions:
