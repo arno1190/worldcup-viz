@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-06",
+  "asOf": "2026-07-07",
   "topScorers": [
     {
       "player": "Haaland",
@@ -24,6 +24,12 @@
       "team": "England",
       "iso2": "gb-eng",
       "goals": 6
+    },
+    {
+      "player": "Bellingham",
+      "team": "England",
+      "iso2": "gb-eng",
+      "goals": 4
     },
     {
       "player": "Dembélé",
@@ -53,12 +59,6 @@
       "player": "Quiñones",
       "team": "Mexico",
       "iso2": "mx",
-      "goals": 4
-    },
-    {
-      "player": "Vinícius",
-      "team": "Brazil",
-      "iso2": "br",
       "goals": 4
     }
   ],
@@ -136,6 +136,12 @@
       "matches": 5
     },
     {
+      "team": "Belgium",
+      "iso2": "be",
+      "goalsFor": 13,
+      "matches": 5
+    },
+    {
       "team": "Norway",
       "iso2": "no",
       "goalsFor": 12,
@@ -166,6 +172,12 @@
       "matches": 4
     },
     {
+      "team": "United States",
+      "iso2": "us",
+      "goalsFor": 11,
+      "matches": 5
+    },
+    {
       "team": "Brazil",
       "iso2": "br",
       "goalsFor": 10,
@@ -176,18 +188,6 @@
       "iso2": "mx",
       "goalsFor": 10,
       "matches": 5
-    },
-    {
-      "team": "Morocco",
-      "iso2": "ma",
-      "goalsFor": 10,
-      "matches": 5
-    },
-    {
-      "team": "Senegal",
-      "iso2": "sn",
-      "goalsFor": 10,
-      "matches": 4
     }
   ],
   "bestDefense": [
@@ -195,8 +195,8 @@
       "team": "Spain",
       "iso2": "es",
       "goalsAgainst": 0,
-      "cleanSheets": 4,
-      "matches": 4
+      "cleanSheets": 5,
+      "matches": 5
     },
     {
       "team": "Colombia",
@@ -213,17 +213,17 @@
       "matches": 5
     },
     {
-      "team": "Portugal",
-      "iso2": "pt",
-      "goalsAgainst": 2,
-      "cleanSheets": 2,
-      "matches": 4
-    },
-    {
       "team": "Mexico",
       "iso2": "mx",
       "goalsAgainst": 3,
       "cleanSheets": 4,
+      "matches": 5
+    },
+    {
+      "team": "Portugal",
+      "iso2": "pt",
+      "goalsAgainst": 3,
+      "cleanSheets": 2,
       "matches": 5
     },
     {
