@@ -1,6 +1,12 @@
 {
-  "asOf": "2026-07-07",
+  "asOf": "2026-07-08",
   "topScorers": [
+    {
+      "player": "Messi",
+      "team": "Argentina",
+      "iso2": "ar",
+      "goals": 8
+    },
     {
       "player": "Haaland",
       "team": "Norway",
@@ -11,12 +17,6 @@
       "player": "Mbappé",
       "team": "France",
       "iso2": "fr",
-      "goals": 7
-    },
-    {
-      "player": "Messi",
-      "team": "Argentina",
-      "iso2": "ar",
       "goals": 7
     },
     {
@@ -130,6 +130,12 @@
   ],
   "bestAttack": [
     {
+      "team": "Argentina",
+      "iso2": "ar",
+      "goalsFor": 14,
+      "matches": 5
+    },
+    {
       "team": "France",
       "iso2": "fr",
       "goalsFor": 14,
@@ -146,12 +152,6 @@
       "iso2": "no",
       "goalsFor": 12,
       "matches": 5
-    },
-    {
-      "team": "Argentina",
-      "iso2": "ar",
-      "goalsFor": 11,
-      "matches": 4
     },
     {
       "team": "England",
@@ -202,8 +202,8 @@
       "team": "Colombia",
       "iso2": "co",
       "goalsAgainst": 1,
-      "cleanSheets": 3,
-      "matches": 4
+      "cleanSheets": 4,
+      "matches": 5
     },
     {
       "team": "France",
@@ -227,11 +227,11 @@
       "matches": 5
     },
     {
-      "team": "Argentina",
-      "iso2": "ar",
+      "team": "Switzerland",
+      "iso2": "ch",
       "goalsAgainst": 3,
       "cleanSheets": 2,
-      "matches": 4
+      "matches": 5
     },
     {
       "team": "Australia",
@@ -248,17 +248,17 @@
       "matches": 4
     },
     {
-      "team": "Switzerland",
-      "iso2": "ch",
-      "goalsAgainst": 3,
-      "cleanSheets": 1,
-      "matches": 4
-    },
-    {
       "team": "Iran",
       "iso2": "ir",
       "goalsAgainst": 3,
       "cleanSheets": 1,
+      "matches": 3
+    },
+    {
+      "team": "South Korea",
+      "iso2": "kr",
+      "goalsAgainst": 3,
+      "cleanSheets": 0,
       "matches": 3
     }
   ]
