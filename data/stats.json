@@ -1,6 +1,12 @@
 {
-  "asOf": "2026-07-09",
+  "asOf": "2026-07-10",
   "topScorers": [
+    {
+      "player": "Mbappé",
+      "team": "France",
+      "iso2": "fr",
+      "goals": 8
+    },
     {
       "player": "Messi",
       "team": "Argentina",
@@ -14,27 +20,21 @@
       "goals": 7
     },
     {
-      "player": "Mbappé",
-      "team": "France",
-      "iso2": "fr",
-      "goals": 7
-    },
-    {
       "player": "Kane",
       "team": "England",
       "iso2": "gb-eng",
       "goals": 6
     },
     {
-      "player": "Bellingham",
-      "team": "England",
-      "iso2": "gb-eng",
-      "goals": 4
-    },
-    {
       "player": "Dembélé",
       "team": "France",
       "iso2": "fr",
+      "goals": 5
+    },
+    {
+      "player": "Bellingham",
+      "team": "England",
+      "iso2": "gb-eng",
       "goals": 4
     },
     {
@@ -130,14 +130,14 @@
   ],
   "bestAttack": [
     {
-      "team": "Argentina",
-      "iso2": "ar",
-      "goalsFor": 14,
-      "matches": 5
-    },
-    {
       "team": "France",
       "iso2": "fr",
+      "goalsFor": 16,
+      "matches": 6
+    },
+    {
+      "team": "Argentina",
+      "iso2": "ar",
       "goalsFor": 14,
       "matches": 5
     },
@@ -209,8 +209,8 @@
       "team": "France",
       "iso2": "fr",
       "goalsAgainst": 2,
-      "cleanSheets": 3,
-      "matches": 5
+      "cleanSheets": 4,
+      "matches": 6
     },
     {
       "team": "Mexico",
