@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-10",
+  "asOf": "2026-07-11",
   "title": "2026 FIFA World Cup — Road to the Final",
   "champion": null,
   "teams": [
@@ -951,7 +951,7 @@
         {
           "minute": 103,
           "team": "B",
-          "scorer": "S. Cabral"
+          "scorer": "Lopes Cabral"
         },
         {
           "minute": 111,
@@ -1746,20 +1746,70 @@
       "round": "Quarter-finals",
       "teamA": "Spain",
       "teamB": "Belgium",
-      "scoreA": null,
-      "scoreB": null,
+      "scoreA": 2,
+      "scoreB": 1,
       "penA": null,
       "penB": null,
-      "winner": null,
+      "winner": "Spain",
       "date": "2026-07-10",
       "kickoffUtc": "2026-07-10T19:00:00.000Z",
       "venue": "SoFi Stadium",
       "city": "Inglewood",
-      "status": "scheduled",
-      "goals": null,
-      "attendance": null,
-      "referee": null,
-      "stats": null
+      "status": "completed",
+      "goals": [
+        {
+          "minute": 30,
+          "team": "A",
+          "scorer": "Fabián"
+        },
+        {
+          "minute": 30,
+          "team": "A",
+          "scorer": "F. Ruiz"
+        },
+        {
+          "minute": 41,
+          "team": "B",
+          "scorer": "De Ketelaere"
+        },
+        {
+          "minute": 88,
+          "team": "A",
+          "scorer": "Merino"
+        }
+      ],
+      "attendance": 70492,
+      "referee": "Michael Oliver",
+      "stats": {
+        "possession": [
+          68,
+          32
+        ],
+        "shots": [
+          16,
+          5
+        ],
+        "shotsOnTarget": [
+          7,
+          2
+        ],
+        "corners": [
+          5,
+          1
+        ],
+        "fouls": [
+          13,
+          16
+        ],
+        "xg": [
+          2.04,
+          0.38
+        ],
+        "formation": [
+          "4-5-1",
+          "4-5-1"
+        ]
+      }
     },
     {
       "id": "QF-3",
@@ -1805,7 +1855,7 @@
       "id": "SF-1",
       "round": "Semi-finals",
       "teamA": "France",
-      "teamB": "TBD",
+      "teamB": "Spain",
       "scoreA": null,
       "scoreB": null,
       "penA": null,
@@ -1815,7 +1865,7 @@
       "kickoffUtc": "2026-07-14T19:00:00.000Z",
       "venue": "AT&T Stadium",
       "city": "Arlington",
-      "status": "TBD",
+      "status": "scheduled",
       "goals": null,
       "attendance": null,
       "referee": null,
