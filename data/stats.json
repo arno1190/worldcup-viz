@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-11",
+  "asOf": "2026-07-12",
   "topScorers": [
     {
       "player": "Mbappé",
@@ -20,6 +20,12 @@
       "goals": 7
     },
     {
+      "player": "Bellingham",
+      "team": "England",
+      "iso2": "gb-eng",
+      "goals": 6
+    },
+    {
       "player": "Kane",
       "team": "England",
       "iso2": "gb-eng",
@@ -30,12 +36,6 @@
       "team": "France",
       "iso2": "fr",
       "goals": 5
-    },
-    {
-      "player": "Bellingham",
-      "team": "England",
-      "iso2": "gb-eng",
-      "goals": 4
     },
     {
       "player": "I. Sarr",
@@ -139,7 +139,7 @@
       "team": "Argentina",
       "iso2": "ar",
       "goalsFor": 14,
-      "matches": 5
+      "matches": 6
     },
     {
       "team": "Belgium",
@@ -148,16 +148,16 @@
       "matches": 6
     },
     {
-      "team": "Norway",
-      "iso2": "no",
-      "goalsFor": 12,
-      "matches": 5
-    },
-    {
       "team": "England",
       "iso2": "gb-eng",
-      "goalsFor": 11,
-      "matches": 5
+      "goalsFor": 13,
+      "matches": 6
+    },
+    {
+      "team": "Norway",
+      "iso2": "no",
+      "goalsFor": 13,
+      "matches": 6
     },
     {
       "team": "Germany",
@@ -220,15 +220,15 @@
       "matches": 5
     },
     {
-      "team": "Portugal",
-      "iso2": "pt",
-      "goalsAgainst": 3,
-      "cleanSheets": 2,
-      "matches": 5
-    },
-    {
       "team": "Switzerland",
       "iso2": "ch",
+      "goalsAgainst": 3,
+      "cleanSheets": 3,
+      "matches": 6
+    },
+    {
+      "team": "Portugal",
+      "iso2": "pt",
       "goalsAgainst": 3,
       "cleanSheets": 2,
       "matches": 5
