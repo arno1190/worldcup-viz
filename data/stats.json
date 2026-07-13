@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-12",
+  "asOf": "2026-07-13",
   "topScorers": [
     {
       "player": "Mbappé",
@@ -130,15 +130,15 @@
   ],
   "bestAttack": [
     {
-      "team": "France",
-      "iso2": "fr",
-      "goalsFor": 16,
+      "team": "Argentina",
+      "iso2": "ar",
+      "goalsFor": 17,
       "matches": 6
     },
     {
-      "team": "Argentina",
-      "iso2": "ar",
-      "goalsFor": 14,
+      "team": "France",
+      "iso2": "fr",
+      "goalsFor": 16,
       "matches": 6
     },
     {
@@ -220,13 +220,6 @@
       "matches": 5
     },
     {
-      "team": "Switzerland",
-      "iso2": "ch",
-      "goalsAgainst": 3,
-      "cleanSheets": 3,
-      "matches": 6
-    },
-    {
       "team": "Portugal",
       "iso2": "pt",
       "goalsAgainst": 3,
@@ -260,6 +253,13 @@
       "goalsAgainst": 3,
       "cleanSheets": 0,
       "matches": 3
+    },
+    {
+      "team": "Brazil",
+      "iso2": "br",
+      "goalsAgainst": 4,
+      "cleanSheets": 2,
+      "matches": 5
     }
   ]
 }
