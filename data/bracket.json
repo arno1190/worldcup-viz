@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-13",
+  "asOf": "2026-07-14",
   "title": "2026 FIFA World Cup — Road to the Final",
   "champion": null,
   "teams": [
@@ -1910,7 +1910,36 @@
       ],
       "attendance": 69045,
       "referee": "João Pinheiro",
-      "stats": null
+      "stats": {
+        "possession": [
+          59,
+          41
+        ],
+        "shots": [
+          22,
+          11
+        ],
+        "shotsOnTarget": [
+          7,
+          5
+        ],
+        "corners": [
+          8,
+          2
+        ],
+        "fouls": [
+          14,
+          18
+        ],
+        "xg": [
+          2,
+          0.53
+        ],
+        "formation": [
+          "4-4-2",
+          "4-5-1"
+        ]
+      }
     },
     {
       "id": "SF-1",
