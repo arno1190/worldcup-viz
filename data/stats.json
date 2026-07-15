@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-14",
+  "asOf": "2026-07-15",
   "topScorers": [
     {
       "player": "Mbappé",
@@ -38,6 +38,12 @@
       "goals": 5
     },
     {
+      "player": "Oyarzabal",
+      "team": "Spain",
+      "iso2": "es",
+      "goals": 5
+    },
+    {
       "player": "I. Sarr",
       "team": "Senegal",
       "iso2": "sn",
@@ -47,12 +53,6 @@
       "player": "J. David",
       "team": "Canada",
       "iso2": "ca",
-      "goals": 4
-    },
-    {
-      "player": "Oyarzabal",
-      "team": "Spain",
-      "iso2": "es",
       "goals": 4
     },
     {
@@ -139,7 +139,7 @@
       "team": "France",
       "iso2": "fr",
       "goalsFor": 16,
-      "matches": 6
+      "matches": 7
     },
     {
       "team": "Belgium",
@@ -160,6 +160,12 @@
       "matches": 6
     },
     {
+      "team": "Spain",
+      "iso2": "es",
+      "goalsFor": 13,
+      "matches": 7
+    },
+    {
       "team": "Germany",
       "iso2": "de",
       "goalsFor": 11,
@@ -170,12 +176,6 @@
       "iso2": "nl",
       "goalsFor": 11,
       "matches": 4
-    },
-    {
-      "team": "Spain",
-      "iso2": "es",
-      "goalsFor": 11,
-      "matches": 6
     },
     {
       "team": "United States",
@@ -195,8 +195,8 @@
       "team": "Spain",
       "iso2": "es",
       "goalsAgainst": 1,
-      "cleanSheets": 5,
-      "matches": 6
+      "cleanSheets": 6,
+      "matches": 7
     },
     {
       "team": "Colombia",
@@ -204,13 +204,6 @@
       "goalsAgainst": 1,
       "cleanSheets": 4,
       "matches": 5
-    },
-    {
-      "team": "France",
-      "iso2": "fr",
-      "goalsAgainst": 2,
-      "cleanSheets": 4,
-      "matches": 6
     },
     {
       "team": "Mexico",
@@ -253,6 +246,13 @@
       "goalsAgainst": 3,
       "cleanSheets": 0,
       "matches": 3
+    },
+    {
+      "team": "France",
+      "iso2": "fr",
+      "goalsAgainst": 4,
+      "cleanSheets": 4,
+      "matches": 7
     },
     {
       "team": "Brazil",
