@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-15",
+  "asOf": "2026-07-16",
   "topScorers": [
     {
       "player": "Mbappé",
@@ -132,8 +132,8 @@
     {
       "team": "Argentina",
       "iso2": "ar",
-      "goalsFor": 17,
-      "matches": 6
+      "goalsFor": 19,
+      "matches": 7
     },
     {
       "team": "France",
@@ -150,8 +150,8 @@
     {
       "team": "England",
       "iso2": "gb-eng",
-      "goalsFor": 13,
-      "matches": 6
+      "goalsFor": 14,
+      "matches": 7
     },
     {
       "team": "Norway",
