@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-07-18",
+  "asOf": "2026-07-19",
   "title": "2026 FIFA World Cup — Road to the Final",
   "champion": null,
   "teams": [
@@ -2090,11 +2090,11 @@
   "thirdPlace": {
     "teamA": "France",
     "teamB": "England",
-    "scoreA": null,
-    "scoreB": null,
-    "winner": null,
+    "scoreA": 4,
+    "scoreB": 6,
+    "winner": "England",
     "date": "2026-07-18",
-    "status": "scheduled"
+    "status": "completed"
   },
   "sources": [
     "https://api.zafronix.com (Zafronix World Cup API)"
