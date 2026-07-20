@@ -1,7 +1,7 @@
 {
-  "asOf": "2026-07-19",
+  "asOf": "2026-07-20",
   "title": "2026 FIFA World Cup — Road to the Final",
-  "champion": null,
+  "champion": "Spain",
   "teams": [
     {
       "name": "Algeria",
@@ -2071,20 +2071,55 @@
       "round": "Final",
       "teamA": "Spain",
       "teamB": "Argentina",
-      "scoreA": null,
-      "scoreB": null,
+      "scoreA": 1,
+      "scoreB": 0,
       "penA": null,
       "penB": null,
-      "winner": null,
+      "winner": "Spain",
       "date": "2026-07-19",
       "kickoffUtc": "2026-07-19T19:00:00.000Z",
       "venue": "MetLife Stadium",
       "city": "East Rutherford",
-      "status": "scheduled",
-      "goals": null,
+      "status": "completed",
+      "goals": [
+        {
+          "minute": 106,
+          "team": "A",
+          "scorer": "Ferrán Torres"
+        }
+      ],
       "attendance": null,
-      "referee": null,
-      "stats": null
+      "referee": "Slavko Vinčić",
+      "stats": {
+        "possession": [
+          65,
+          35
+        ],
+        "shots": [
+          20,
+          2
+        ],
+        "shotsOnTarget": [
+          12,
+          0
+        ],
+        "corners": [
+          9,
+          4
+        ],
+        "fouls": [
+          21,
+          25
+        ],
+        "xg": [
+          null,
+          null
+        ],
+        "formation": [
+          "4-1-2-3",
+          "4-4-2"
+        ]
+      }
     }
   ],
   "thirdPlace": {
